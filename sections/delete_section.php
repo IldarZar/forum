@@ -1,5 +1,5 @@
 <?php
-    require "../../connect.php";
+    require "../connect.php";
 
     
     $section_id = $_GET["section_id"];

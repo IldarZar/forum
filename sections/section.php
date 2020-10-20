@@ -8,7 +8,7 @@
 <body>
     <pre>
         <?php
-            require "../../connect.php";
+            require "../connect.php";
 
 
             $theme_id = $_GET["theme_id"];

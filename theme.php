@@ -10,7 +10,7 @@
         Разделы
         <pre>
             <?php 
-                require "../connect.php";
+                require "connect.php";
 
                 $theme_id = $_GET['theme_id'];
                 $values = mysqli_query($connect, "SELECT * FROM forum_sections");
@@ -24,6 +24,7 @@
             <?php
                     };
                 };
+
             ?>
         </pre>
 

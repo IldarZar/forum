@@ -1,6 +1,6 @@
 <?php
 
-    $connect = mysqli_connect('localhost', 'root', 'root', 'forum');
+    require "../connect.php";
 
     $theme_id = $_GET['theme_id'];
     $section_name = $_POST['section_name'];

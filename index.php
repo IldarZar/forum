@@ -28,7 +28,7 @@
     ?>
     <div>
         <div>
-            <a href="vendor/theme.php?theme_id=<?= $theme["id"] ?>"><?= $theme["title"] ?></a>
+            <a href="theme.php?theme_id=<?= $theme["id"] ?>"><?= $theme["title"] ?></a>
             <a href="delete.php?theme_id=<?= $theme["id"] ?>">Удалить</a>
             <a href="update.php?theme_id=<?= $theme["id"] ?>">Изменить</a>
         </div>
