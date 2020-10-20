@@ -35,9 +35,7 @@
     </div>
 
     <?php
-
         };            
-
     ?>
 
     <form action="create_theme.php" method="POST">
