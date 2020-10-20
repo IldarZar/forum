@@ -13,18 +13,13 @@
 
             $theme_id = $_GET["theme_id"];
             $section_id = $_GET["section_id"];
-
-            var_dump($section_id);
-            var_dump($theme_id);
-
-            $values = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM forum_topics"));
-            print_r($values);
+            $values = mysqli_query($connect, "SELECT * FROM forum_topics");
             foreach($values as $value){
-                if($value[2] == $section_id){
+                if($value["section_id"] == $section_id){
         ?>
                     <div>
-                        <a href=""><?= $value[1] ?></a>
-                        <a href="./topics/delete_topic.php?theme_id=<?= $theme_id ?>&section_id=<?= $section_id ?>&topic_id=<?= $value[0] ?>">Удалить</a>
+                        <a href=""><?= $value["title"] ?></a>
+                        <a href="./topics/delete_topic.php?theme_id=<?= $theme_id ?>&section_id=<?= $section_id ?>&topic_id=<?= $value["id"] ?>">Удалить</a>
                     </div>
         <?php
                 };

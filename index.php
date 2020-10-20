@@ -13,9 +13,7 @@
         require "connect.php";
 
         $forum_themes = mysqli_query($connect, "SELECT * FROM `forum_themes`");
-        $forum_themes = mysqli_fetch_all($forum_themes);
-
-        print_r($forum_themes);
+        
     ?>
 </pre>
 
@@ -26,15 +24,13 @@
     </div>
 
     <?php 
-
-        foreach($forum_themes as $theme){
-
+        while($theme = mysqli_fetch_assoc($forum_themes)){
     ?>
     <div>
         <div>
-            <a href="vendor/theme.php?theme_id=<?= $theme[0] ?>"><?= $theme[1] ?></a>
-            <a href="delete.php?theme_id=<?= $theme[0] ?>">Удалить</a>
-            <a href="update.php?theme_id=<?= $theme[0] ?>">Изменить</a>
+            <a href="vendor/theme.php?theme_id=<?= $theme["id"] ?>"><?= $theme["title"] ?></a>
+            <a href="delete.php?theme_id=<?= $theme["id"] ?>">Удалить</a>
+            <a href="update.php?theme_id=<?= $theme["id"] ?>">Изменить</a>
         </div>
     </div>
 

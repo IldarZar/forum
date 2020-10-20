@@ -11,16 +11,15 @@
         <pre>
             <?php 
                 require "../connect.php";
-                $theme_id = $_GET['theme_id'];
-                $values = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM forum_sections")); 
-                print_r($values);
 
-                foreach($values as $value){
-                    if ($value[1] == $theme_id){
+                $theme_id = $_GET['theme_id'];
+                $values = mysqli_query($connect, "SELECT * FROM forum_sections");
+                while($value = mysqli_fetch_assoc($values)){
+                    if ($value['theme_id'] == $theme_id){
             ?>
                 <div>
-                    <a href="./sections/section.php?theme_id=<?= $value[1] ?>&section_id=<?= $value[0] ?>"><?= $value[2] ?></a> 
-                    <a href="./sections/delete_section.php?theme_id=<?= $value[1] ?>&section_id=<?= $value[0] ?>">Удалить</a>
+                    <a href="./sections/section.php?theme_id=<?= $value['theme_id'] ?>&section_id=<?= $value['id'] ?>"><?= $value["title"] ?></a> 
+                    <a href="./sections/delete_section.php?theme_id=<?= $value['theme_id'] ?>&section_id=<?= $value['id'] ?>">Удалить</a>
                 </div>
             <?php
                     };
