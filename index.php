@@ -10,7 +10,7 @@
 <pre>
     <?php
 
-        require "connect.php";
+        require "data/db_data.php";
 
         $forum_themes = mysqli_query($connect, "SELECT * FROM `forum_themes`");
         

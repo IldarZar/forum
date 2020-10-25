@@ -1,6 +1,6 @@
 <?php
 
-    require "../connect.php";
+    require "../data/db_data.php";
 
     $theme_id = $_GET['theme_id'];
     $section_name = $_POST['section_name'];

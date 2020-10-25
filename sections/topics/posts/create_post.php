@@ -1,5 +1,5 @@
 <?php
-    require "../../../connect.php";
+    require "../../../data/db_data.php";
 
     $post_name = $_POST['post_name'];
     $theme_id = $_GET['theme_id'];

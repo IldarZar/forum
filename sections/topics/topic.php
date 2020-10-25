@@ -6,9 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-<pre>
+
     <?php 
-        require "../../connect.php";
+        require "../../data/db_data.php";
         
         $theme_id = $_GET['theme_id'];
         $section_id = $_GET['section_id'];
@@ -19,17 +19,13 @@
         while($value = mysqli_fetch_assoc($values)){
 
             if ($topic_id == $value['topic_id']){
-                print_r($section_id);
-                print_r($value);
     ?>
-            <a href=""><?= $value['post_text'] ?></a>
-            <a href="posts/delete_post.php?theme_id=<?= $theme_id ?>&section_id=<?= $section_id ?>&topic_id=<?= $topic_id ?>&post_id=<?= $value['id'] ?>">Удалить</a>
+            <?= $value['post_text'] ?>
+            <a href="posts/delete_post.php?theme_id=<?= $theme_id ?>&section_id=<?= $section_id ?>&topic_id=<?= $topic_id ?>&post_id=<?= $value['id'] ?>">Удалить</a><br>
     <?php
             }
         };
     ?>
-
-    </pre>
 
     <form action="posts/create_post.php?theme_id=<?= $theme_id ?>&section_id=<?= $section_id ?>&topic_id=<?= $topic_id ?>" method="POST">
         <p>Название поста</p>
